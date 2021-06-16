@@ -5,23 +5,32 @@ var contestantCount;
 var allContestants;
 var answer;
 var database;
+var background
 
 var question, contestant, quiz;
 
+function preload(){
+  backgroundImage = loadImage("bg.png");
+}
 
 
 function setup(){
-  createCanvas(850,600);
+  createCanvas(1000,600);
   input=createInput().attribute("placeholder", "Enter your name ");
   input.position(400,230);
   
   bP=createButton("SUBMIT");
   bP.position(450,280);
   bP.mousePressed(logic);
+
+  background = createSprite(425,300,850,650)
   }
   
+   
+  
   function draw(){
-  background(bgImage);
+  background.addImage("bg",backgroundImage);
+  drawSprites();
   }
   
   function logic(){
